@@ -56,11 +56,9 @@ const ToggleButton = ({ onClick, isShowingMore }) => (
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
-        className={`
-          transition-transform 
-          duration-300 
-          ${isShowingMore ? "group-hover:-translate-y-0.5" : "group-hover:translate-y-0.5"}
-        `}
+        className={`transition-transform duration-300 ${
+          isShowingMore ? "group-hover:-translate-y-0.5" : "group-hover:translate-y-0.5"
+        }`}
       >
         <polyline points={isShowingMore ? "18 15 12 9 6 15" : "6 9 12 15 18 9"}></polyline>
       </svg>
@@ -148,12 +146,15 @@ export default function FullWidthTabs() {
         TechStack: doc.data().TechStack || [],
       }));
 
-      const certificateData = certificateSnapshot.docs.map((doc) => doc.data());
+      // ✅ Fix: Only this part changed to correctly fetch certificate images
+      const certificateData = certificateSnapshot.docs.map((doc) => ({
+        id: doc.id,
+        Img: doc.data().Img, // <-- this ensures Certificate receives ImgSertif
+      }));
 
       setProjects(projectData);
       setCertificates(certificateData);
 
-      // Store in localStorage
       localStorage.setItem("projects", JSON.stringify(projectData));
       localStorage.setItem("certificates", JSON.stringify(certificateData));
     } catch (error) {
@@ -226,7 +227,6 @@ export default function FullWidthTabs() {
           }}
           className="md:px-4"
         >
-          {/* Tabs remain unchanged */}
           <Tabs
             value={value}
             onChange={handleChange}
@@ -234,7 +234,6 @@ export default function FullWidthTabs() {
             indicatorColor="secondary"
             variant="fullWidth"
             sx={{
-              // Existing styles remain unchanged
               minHeight: "70px",
               "& .MuiTab-root": {
                 fontSize: { xs: "0.9rem", md: "1rem" },

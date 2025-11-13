@@ -1,16 +1,18 @@
+// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore"
-import { collection, addDoc, } from "@firebase/firestore"; // Perbarui ini
-
+import { collection, getFirestore } from 'firebase/firestore';
+import { addDoc } from 'firebase/firestore';
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyATQszFhxN2ovWYtz2-fG48cYNrDTZ3mjs",
-  authDomain: "mahimportfolio-b8ca2.firebaseapp.com",
-  projectId: "mahimportfolio-b8ca2",
-  storageBucket: "mahimportfolio-b8ca2.firebasestorage.app",
-  messagingSenderId: "1079011196957",
-  appId: "1:1079011196957:web:2489a4e7aff9f8430506f4"
+  apiKey: "AIzaSyCl0t6J_o4oPl6A5QIa0-ANLpdpL5qY6P4",
+  authDomain: "portfolio-projects-b7563.firebaseapp.com",
+  projectId: "portfolio-projects-b7563",
+  storageBucket: "portfolio-projects-b7563.firebasestorage.app",
+  messagingSenderId: "800686472483",
+  appId: "1:800686472483:web:76bb240c95941ddaeee096"
 };
 
 // Initialize Firebase

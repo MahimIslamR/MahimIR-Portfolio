@@ -4,12 +4,12 @@ import { getStorage } from "firebase/storage";
 
 // 🔹 Your Firebase config
 const firebaseConfig = {
-  apiKey: "AIza....",
-  authDomain: "mahimportfolio.firebaseapp.com",
-  projectId: "mahimportfolio",
-  storageBucket: "mahimportfolio.appspot.com",
-  messagingSenderId: "1234567890",
-  appId: "1:1234567890:web:abcdef"
+  apiKey: "AIzaSyCl0t6J_o4oPl6A5QIa0-ANLpdpL5qY6P4",
+  authDomain: "portfolio-projects-b7563.firebaseapp.com",
+  projectId: "portfolio-projects-b7563",
+  storageBucket: "portfolio-projects-b7563.firebasestorage.app",
+  messagingSenderId: "800686472483",
+  appId: "1:800686472483:web:76bb240c95941ddaeee096"
 };
 
 // 🔹 Initialize Firebase
